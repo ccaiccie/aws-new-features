@@ -1,0 +1,5 @@
+region                = "us-east-1"
+name_prefix           = "nfw-ngfw-lab"
+vpc_cidr              = "10.80.0.0/16"
+firewall_subnet_cidrs = ["10.80.0.0/24", "10.80.1.0/24"]
+create_firewall       = false

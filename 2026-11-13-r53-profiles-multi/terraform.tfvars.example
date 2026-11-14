@@ -1,0 +1,5 @@
+region              = "us-east-1"
+name_prefix         = "r53prof-lab"
+vpc_cidr            = "10.90.0.0/16"
+primary_zone_name   = "app.example.internal"
+secondary_zone_name = "shared.example.internal"
