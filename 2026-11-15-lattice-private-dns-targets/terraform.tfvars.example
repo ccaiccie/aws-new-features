@@ -1,0 +1,11 @@
+region                 = "us-east-1"
+name_prefix            = "lattice-pdns"
+producer_cidr          = "10.0.0.0/16"
+consumer_cidr          = "10.1.0.0/16"
+private_zone_name      = "svc.internal"
+service_label          = "payments"
+service_port           = 8443
+dns_resolution         = "IN_VPC"
+private_dns_preference = "SPECIFIED_DOMAINS_ONLY"
+create_instances       = true
+instance_type          = "t3.micro"
