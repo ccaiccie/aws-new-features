@@ -1,0 +1,4 @@
+region             = "us-east-2"
+name_prefix        = "bpa-lab"
+enable_account_bpa = false
+account_bpa_mode   = "block-ingress"
