@@ -1,0 +1,10 @@
+region                    = "us-east-1"
+name_prefix               = "dnsfw-lab"
+vpc_cidr                  = "10.60.0.0/16"
+blocked_domains           = ["blocked.example.com.", "*.bad-example.net."]
+allowed_domains           = ["partner.example.org."]
+override_cname            = "sinkhole.example.com."
+managed_aggregate_list_id = "" # rslvr-fdl-... for AWSManagedDomainsAggregateThreatList in your Region
+tunneling_action          = "ALERT"
+tunneling_confidence      = "MEDIUM"
+firewall_fail_open        = "DISABLED"
