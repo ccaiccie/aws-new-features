@@ -13,3 +13,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-15-lattice-private-dns-targets](./2026-11-15-lattice-private-dns-targets) | VPC Lattice private domain-name targets (IN_VPC DNS resolution) | [YouTube](https://youtu.be/46zLzqx3hug) |
 | [2026-11-16-vpc-block-public-access](./2026-11-16-vpc-block-public-access) | VPC Block Public Access: account guardrail and exclusions | Upload pending |
 | [2026-11-17-route53-dns-firewall](./2026-11-17-route53-dns-firewall) | Route 53 Resolver DNS Firewall: domain lists, actions and Advanced rules | Upload pending |
+| [2026-11-17-ram-org-id-sharing](./2026-11-17-ram-org-id-sharing) | AWS RAM with Organizations: org, OU and account sharing, and Org ID changes | Upload pending |

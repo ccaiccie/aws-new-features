@@ -1,0 +1,16 @@
+region      = "us-east-1"
+name_prefix = "ram-org-lab"
+vpc_cidr    = "10.70.0.0/16"
+
+# true only when running in the management account and sharing is not yet on
+enable_org_sharing = false
+
+# empty = share to this account's organization ARN; or an OU ARN, for example
+# "arn:aws:organizations::111111111111:ou/o-abc123/ou-ab12-cd34ef56"
+org_share_principal = ""
+
+# account IDs that will move to another organization (migration share)
+retain_share_account_ids = ["222222222222"]
+
+create_transit_gateway = true
+onprem_prefixes        = ["192.168.10.0/24", "192.168.20.0/24"]
