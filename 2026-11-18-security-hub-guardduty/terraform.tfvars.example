@@ -1,0 +1,16 @@
+region      = "us-east-1"
+name_prefix = "shgd-lab"
+
+# Port probes from your own scanner are auto-archived (GuardDuty suppression rule)
+trusted_scanner_ip = "192.0.2.10"
+
+# Optional email for the SNS topic (confirm the subscription email)
+alert_email = ""
+
+# Optional, cost-bearing or organization-only switches
+enable_runtime_monitoring = false
+enable_security_hub_v2    = false
+enable_network_scanning   = false
+
+# Only from an Organizations management account
+delegated_admin_account_id = ""

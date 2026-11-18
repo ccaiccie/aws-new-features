@@ -15,3 +15,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-17-route53-dns-firewall](./2026-11-17-route53-dns-firewall) | Route 53 Resolver DNS Firewall: domain lists, actions and Advanced rules | Upload pending |
 | [2026-11-17-ram-org-id-sharing](./2026-11-17-ram-org-id-sharing) | AWS RAM with Organizations: org, OU and account sharing, and Org ID changes | Upload pending |
 | [2026-11-18-vpc-ipam-prefix-lists](./2026-11-18-vpc-ipam-prefix-lists) | VPC IP Address Manager (IPAM): pools, allocation rules and prefix list automation | [YouTube](https://youtu.be/b6EYmInNA-A) |
+| [2026-11-18-security-hub-guardduty](./2026-11-18-security-hub-guardduty) | Security Hub and GuardDuty: from threat finding to response | Upload pending |
