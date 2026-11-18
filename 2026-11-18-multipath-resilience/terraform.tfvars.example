@@ -1,0 +1,10 @@
+# Both Regions must be Multipath Resilience launch Regions: us-east-1, us-east-2, us-west-1, us-west-2, eu-west-1.
+region_a    = "us-east-1"
+region_b    = "us-west-2"
+name_prefix = "mpr-lab"
+vpc_a_cidr  = "10.10.0.0/16"
+vpc_b_cidr  = "10.20.0.0/16"
+
+# Optional inter-Region Transit Gateway peering (adds TGW attachment-hour charges in both Regions).
+enable_tgw_peering = false
+route_via          = "peering" # or "tgw" when enable_tgw_peering = true
