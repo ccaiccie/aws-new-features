@@ -1,0 +1,13 @@
+region                       = "us-east-1"
+name_prefix                  = "msg-lab"
+finding_publishing_frequency = "FIFTEEN_MINUTES"
+guardduty_min_severity       = 4
+create_macie_job             = true
+
+# Response: log only by default. To try isolation, point at a sandbox VPC first.
+isolation_vpc_id       = ""
+enable_isolation       = false
+isolation_min_severity = 7
+
+# Only from an Organizations management account:
+delegated_admin_account_id = ""
