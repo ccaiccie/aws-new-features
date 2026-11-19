@@ -1,0 +1,12 @@
+region      = "us-east-1"
+name_prefix = "npm-lab"
+vpc_cidr    = "10.98.0.0/16"
+
+# First apply: leave empty. Then run scripts/create-performance-monitor.sh,
+# paste the MonitorId here and apply again to create the alarm and dashboard.
+performance_monitor_id = ""
+impact_alarm_threshold = 95 # 65 = Medium or higher, 95 = High
+alarm_email            = ""
+
+# Optional, only if the VPC can reach an on-premises address (DX or VPN):
+onprem_probe_destination = ""
