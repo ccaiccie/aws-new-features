@@ -18,3 +18,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-18-security-hub-guardduty](./2026-11-18-security-hub-guardduty) | Security Hub and GuardDuty: from threat finding to response | [YouTube](https://youtu.be/MsH3dMkMf24) |
 | [2026-11-18-multipath-resilience](./2026-11-18-multipath-resilience) | Multipath Resilience: 99.999% SLA for cross-Region VPC peering and TGW peering | [YouTube](https://youtu.be/3LwHoY4ICx4) |
 | [2026-11-18-macie-security-hub-guardduty](./2026-11-18-macie-security-hub-guardduty) | Macie, Security Hub and GuardDuty: how they work together | [YouTube](https://youtu.be/3YT_KJmAqm4) |
+| [2026-11-19-vpc-flow-logs-tags-next-hop](./2026-11-19-vpc-flow-logs-tags-next-hop) | VPC Flow Logs v11: resource tag fields and next-hop fields | Upload pending |

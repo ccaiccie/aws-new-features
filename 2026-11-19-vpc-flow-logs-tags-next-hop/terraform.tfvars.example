@@ -1,0 +1,7 @@
+region               = "us-east-1"
+name                 = "flowlogs-v11"
+vpc_cidr             = "10.42.0.0/16"
+instance_type        = "t3.micro"
+aggregation_interval = 60
+log_retention_days   = 3
+enable_s3_parquet    = false
