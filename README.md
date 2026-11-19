@@ -20,4 +20,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-18-macie-security-hub-guardduty](./2026-11-18-macie-security-hub-guardduty) | Macie, Security Hub and GuardDuty: how they work together | [YouTube](https://youtu.be/3YT_KJmAqm4) |
 | [2026-11-19-vpc-flow-logs-tags-next-hop](./2026-11-19-vpc-flow-logs-tags-next-hop) | VPC Flow Logs v11: resource tag fields and next-hop fields | Upload pending |
 | [2026-11-19-cloudwatch-network-path-monitoring](./2026-11-19-cloudwatch-network-path-monitoring) | CloudWatch network path monitoring: performance monitors, impact score and path metrics | [YouTube](https://youtu.be/p6VqZ44n0f4) |
-| [2026-11-19-tgw-gwlb-integration](./2026-11-19-tgw-gwlb-integration) | Transit Gateway network function attachments for Gateway Load Balancer | Upload pending |
+| [2026-11-19-tgw-gwlb-integration](./2026-11-19-tgw-gwlb-integration) | Transit Gateway network function attachments for Gateway Load Balancer | [YouTube](https://youtu.be/RPzL9Sbv2GU) |
