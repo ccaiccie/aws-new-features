@@ -1,0 +1,11 @@
+region             = "us-east-1"
+name               = "r53-private-hc"
+vpc_cidr           = "10.20.0.0/16"
+app_port           = 8080
+health_path        = "/health"
+request_interval   = 30 # 10 = fast checks (extra charge)
+failure_threshold  = 3
+zone_name          = "lab.internal"
+record_name        = "app"
+enable_test_client = true
+alert_email        = "" # optional; confirm the SNS subscription email
