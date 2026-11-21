@@ -1,0 +1,8 @@
+region                      = "us-east-1"
+name                        = "aif-lab"
+policy_mode                 = "MONITOR" # switch to "ENFORCE" after reviewing the logs
+default_subnet_connectivity = "flexible"
+policy_priority             = 900
+# managed_ips_rule_group_arns = ["arn:aws:network-firewall:us-east-1:aws-managed:stateful-rulegroup/..."]
+# test_client_cidr            = "203.0.113.10/32"
+multi_account = false
