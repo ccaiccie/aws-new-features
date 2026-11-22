@@ -23,5 +23,5 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-19-tgw-gwlb-integration](./2026-11-19-tgw-gwlb-integration) | Transit Gateway network function attachments for Gateway Load Balancer | [YouTube](https://youtu.be/RPzL9Sbv2GU) |
 | [2026-11-20-route53-private-health-checks](./2026-11-20-route53-private-health-checks) | Route 53 private endpoint health checks: health check sources and private DNS failover | [YouTube](https://youtu.be/DZaS6_7Hh-0) |
 | [2026-11-21-nfw-automated-internet-firewall](./2026-11-21-nfw-automated-internet-firewall) | Network Firewall automated Internet firewall: inspection and native NAT at the internet gateway (preview) | [YouTube](https://youtu.be/zHKH1MrUYes) |
-| [2026-11-21-aws-vpc-lattice](./2026-11-21-aws-vpc-lattice) | Amazon VPC Lattice: service-to-service connectivity, auth policies and AWS RAM | Upload pending |
-| [2026-11-21-tgw-firewall-context-sharing](./2026-11-21-tgw-firewall-context-sharing) | Transit Gateway firewall context sharing and Network Firewall context-aware rules | Upload pending |
+| [2026-11-21-aws-vpc-lattice](./2026-11-21-aws-vpc-lattice) | Amazon VPC Lattice: service-to-service connectivity, auth policies and AWS RAM | [YouTube](https://youtu.be/GofwF-OIgTc) |
+| [2026-11-21-tgw-firewall-context-sharing](./2026-11-21-tgw-firewall-context-sharing) | Transit Gateway firewall context sharing and Network Firewall context-aware rules | [YouTube](https://youtu.be/LO8bHQs82sA) |
