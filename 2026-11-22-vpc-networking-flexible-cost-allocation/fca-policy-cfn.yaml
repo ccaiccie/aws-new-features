@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  Networking Flexible Cost Allocation (FCA) policy and association for the
+  shared NAT gateway created by the Terraform lab.
+
+Parameters:
+  NatGatewayId:
+    Type: String
+    Description: ID of the public NAT gateway (from terraform output -raw nat_gateway_id).
+  PolicyDescription:
+    Type: String
+    Default: Allocate shared NAT gateway data-transfer and data-processing costs by subnet
+    Description: Description for the FCA policy.
+
+Resources:
+  SharedNatFcaPolicy:
+    Type: AWS::EC2::FcaPolicy
+    Properties:
+      NetworkResourceType: natgw
+      Description: !Ref PolicyDescription
+      ShowBackEnabled: true
+      NatFcaPolicyDocument:
+        ReportingGranularity:
+          - subnet
+        Dimensions:
+          - data-transfer
+          - data-processing
+      Tags:
+        - Key: Project
+          Value: vpc-fca-lab
+        - Key: LabTopic
+          Value: vpc-networking-fca
+
+  SharedNatFcaPolicyAssociation:
+    Type: AWS::EC2::FcaPolicyAssociation
+    Properties:
+      FcaPolicyId: !GetAtt SharedNatFcaPolicy.FcaPolicyId
+      NetworkResourceId: !Ref NatGatewayId
+
+Outputs:
+  FcaPolicyId:
+    Description: ID of the created Networking Flexible Cost Allocation policy.
+    Value: !GetAtt SharedNatFcaPolicy.FcaPolicyId
+  AssociatedNatGatewayId:
+    Description: NAT gateway ID associated with the FCA policy.
+    Value: !Ref NatGatewayId

@@ -1,0 +1,9 @@
+{
+  "ReportingGranularity": [
+    "subnet"
+  ],
+  "Dimensions": [
+    "data-transfer",
+    "data-processing"
+  ]
+}

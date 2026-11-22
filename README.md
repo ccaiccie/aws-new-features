@@ -25,3 +25,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-21-nfw-automated-internet-firewall](./2026-11-21-nfw-automated-internet-firewall) | Network Firewall automated Internet firewall: inspection and native NAT at the internet gateway (preview) | [YouTube](https://youtu.be/zHKH1MrUYes) |
 | [2026-11-21-aws-vpc-lattice](./2026-11-21-aws-vpc-lattice) | Amazon VPC Lattice: service-to-service connectivity, auth policies and AWS RAM | [YouTube](https://youtu.be/GofwF-OIgTc) |
 | [2026-11-21-tgw-firewall-context-sharing](./2026-11-21-tgw-firewall-context-sharing) | Transit Gateway firewall context sharing and Network Firewall context-aware rules | [YouTube](https://youtu.be/UCaBF6i5BCk) |
+| [2026-11-22-vpc-networking-flexible-cost-allocation](./2026-11-22-vpc-networking-flexible-cost-allocation) | Amazon VPC Networking Flexible Cost Allocation (FCA): split shared NAT gateway, EC2, and peering charges in CUR | Upload pending |
