@@ -1,0 +1,12 @@
+{
+  "CloudConnectorId": "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+  "AzureSubscriptions": ["11111111-2222-3333-4444-555555555555"],
+  "CloudProviderRegions": ["eastus"],
+  "AzureResourceGroups": ["dev-app-rg"],
+  "AzureResourceType": "Microsoft.Compute/virtualMachines",
+  "AzureTag": {
+    "Key": "Env",
+    "Value": "dev"
+  },
+  "AzureVmPowerStates": ["RUNNING"]
+}

@@ -1,0 +1,22 @@
+{
+  "DocumentName": "NT-MulticloudLab-GcpStartAndWaitVm",
+  "Targets": [
+    {
+      "Key": "CloudConnector",
+      "Values": [
+        "{\"CloudConnectorId\":\"b2c3d4e5-6789-01bc-def0-EXAMPLE22222\",\"GcpProjects\":[\"my-dev-project\"],\"Zones\":[\"us-central1-a\"],\"IncludesLabels\":{\"env\":\"dev\"}}"
+      ]
+    }
+  ],
+  "TargetParameterName": "InstanceId",
+  "MaxConcurrency": "5",
+  "MaxErrors": "1",
+  "Parameters": {
+    "AutomationAssumeRole": [
+      "arn:aws:iam::111122223333:role/service-role/SSM-GCPAssumeRole-LabConnector-b2c3d4e5"
+    ],
+    "CloudConnector": [
+      "b2c3d4e5-6789-01bc-def0-EXAMPLE22222"
+    ]
+  }
+}

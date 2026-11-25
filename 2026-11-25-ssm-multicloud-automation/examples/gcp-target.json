@@ -1,0 +1,9 @@
+{
+  "CloudConnectorId": "b2c3d4e5-6789-01bc-def0-EXAMPLE22222",
+  "GcpProjects": ["my-dev-project"],
+  "Zones": ["us-central1-a"],
+  "GcpAssetType": "compute.googleapis.com/Instance",
+  "IncludesLabels": {
+    "env": "dev"
+  }
+}

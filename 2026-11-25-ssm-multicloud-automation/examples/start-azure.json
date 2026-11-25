@@ -1,0 +1,22 @@
+{
+  "DocumentName": "NT-MulticloudLab-AzureAssertVmRunning",
+  "Targets": [
+    {
+      "Key": "CloudConnector",
+      "Values": [
+        "{\"CloudConnectorId\":\"a1b2c3d4-5678-90ab-cdef-EXAMPLE11111\",\"AzureSubscriptions\":[\"11111111-2222-3333-4444-555555555555\"],\"CloudProviderRegions\":[\"eastus\"],\"AzureResourceGroups\":[\"dev-app-rg\"],\"AzureTag\":{\"Key\":\"Env\",\"Value\":\"dev\"},\"AzureVmPowerStates\":[\"RUNNING\"]}"
+      ]
+    }
+  ],
+  "TargetParameterName": "VmId",
+  "MaxConcurrency": "5",
+  "MaxErrors": "1",
+  "Parameters": {
+    "AutomationAssumeRole": [
+      "arn:aws:iam::111122223333:role/service-role/SSM-AzureAssumeRole-LabConnector-a1b2c3d4"
+    ],
+    "CloudConnector": [
+      "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+    ]
+  }
+}
