@@ -42,3 +42,43 @@ output "global_network_id" {
   description = "AWS Network Manager Global Network ID"
   value       = aws_networkmanager_global_network.this.id
 }
+
+output "firewall_tgw_attachment_id" {
+  value = local.firewall_tgw_attachment_id
+}
+
+output "before_inspection_table_id" {
+  value = aws_ec2_transit_gateway_route_table.before_inspection.id
+}
+
+output "after_inspection_table_id" {
+  value = aws_ec2_transit_gateway_route_table.after_inspection.id
+}
+
+output "client_instance_id" {
+  value = aws_instance.client.id
+}
+
+output "client_private_ip" {
+  value = aws_instance.client.private_ip
+}
+
+output "server_private_ip" {
+  value = aws_instance.server.private_ip
+}
+
+output "ssh_endpoint_id" {
+  value = aws_ec2_instance_connect_endpoint.dev.id
+}
+
+output "firewall_policy_arn" {
+  value = aws_networkfirewall_firewall_policy.this.arn
+}
+
+output "flow_log_group" {
+  value = aws_cloudwatch_log_group.firewall["FLOW"].name
+}
+
+output "alert_log_group" {
+  value = aws_cloudwatch_log_group.firewall["ALERT"].name
+}

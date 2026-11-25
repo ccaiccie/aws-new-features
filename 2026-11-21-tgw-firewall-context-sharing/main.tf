@@ -3,8 +3,9 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  az_a = data.aws_availability_zones.available.names[0]
-  az_b = data.aws_availability_zones.available.names[1]
+  az_a   = data.aws_availability_zones.available.names[0]
+  az_b   = data.aws_availability_zones.available.names[1]
+  az_ids = zipmap(data.aws_availability_zones.available.names, data.aws_availability_zones.available.zone_ids)
 
   common_tags = {
     Project   = var.project_name
@@ -107,10 +108,10 @@ resource "aws_security_group" "prod_web" {
   vpc_id      = aws_vpc.prod.id
 
   ingress {
-    from_port   = 443
-    to_port     = 443
+    from_port   = 8080
+    to_port     = 8082
     protocol    = "tcp"
-    cidr_blocks = [var.prod_vpc_cidr]
+    cidr_blocks = [aws_subnet.dev_private_a.cidr_block]
   }
 
   egress {
@@ -156,8 +157,8 @@ resource "aws_security_group" "prod_db" {
 # ------------------------------------------------------------------------------
 resource "aws_ec2_transit_gateway" "this" {
   description                     = "Transit Gateway for context sharing with AWS Network Firewall"
-  default_route_table_association = "enable"
-  default_route_table_propagation = "enable"
+  default_route_table_association = "disable"
+  default_route_table_propagation = "disable"
 
   tags = merge(local.common_tags, {
     Name = "${var.project_name}-tgw"
@@ -165,9 +166,11 @@ resource "aws_ec2_transit_gateway" "this" {
 }
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "dev" {
-  transit_gateway_id = aws_ec2_transit_gateway.this.id
-  vpc_id             = aws_vpc.dev.id
-  subnet_ids         = [aws_subnet.dev_private_a.id, aws_subnet.dev_private_b.id]
+  transit_gateway_id                              = aws_ec2_transit_gateway.this.id
+  vpc_id                                          = aws_vpc.dev.id
+  subnet_ids                                      = [aws_subnet.dev_private_a.id, aws_subnet.dev_private_b.id]
+  transit_gateway_default_route_table_association = false
+  transit_gateway_default_route_table_propagation = false
 
   tags = merge(local.common_tags, {
     Name = "${var.project_name}-dev-attach"
@@ -175,9 +178,11 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "dev" {
 }
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "prod" {
-  transit_gateway_id = aws_ec2_transit_gateway.this.id
-  vpc_id             = aws_vpc.prod.id
-  subnet_ids         = [aws_subnet.prod_web_a.id, aws_subnet.prod_db_b.id]
+  transit_gateway_id                              = aws_ec2_transit_gateway.this.id
+  vpc_id                                          = aws_vpc.prod.id
+  subnet_ids                                      = [aws_subnet.prod_web_a.id, aws_subnet.prod_db_b.id]
+  transit_gateway_default_route_table_association = false
+  transit_gateway_default_route_table_propagation = false
 
   tags = merge(local.common_tags, {
     Name = "${var.project_name}-prod-attach"
@@ -227,8 +232,7 @@ resource "aws_networkfirewall_rule_group" "segmentation" {
 
     rules_source {
       rules_string = <<-EOT
-        drop ip $DEV_VPC any -> $PROD_VPC any (msg:"Block Dev VPC to Prod VPC baseline"; sid:100001; rev:1;)
-        pass tcp $PROD_VPC any -> $PROD_VPC 443 (msg:"Allow Prod HTTPS"; sid:100002; rev:1;)
+        drop tcp $DEV_VPC any -> $PROD_VPC 8082 (msg:"Lab IP-based negative control"; sid:100001; rev:2;)
       EOT
     }
 
@@ -270,11 +274,11 @@ resource "aws_networkfirewall_firewall" "this" {
   transit_gateway_id  = aws_ec2_transit_gateway.this.id
 
   availability_zone_mapping {
-    availability_zone_id = data.aws_availability_zones.available.zone_ids[0]
+    availability_zone_id = local.az_ids[local.az_a]
   }
 
   availability_zone_mapping {
-    availability_zone_id = data.aws_availability_zones.available.zone_ids[1]
+    availability_zone_id = local.az_ids[local.az_b]
   }
 
   tags = merge(local.common_tags, {

@@ -1,0 +1,15 @@
+[Unit]
+Description=Private HTTP responder for the TGW context-sharing lab
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+ExecStart=/usr/bin/python3 -I /usr/local/bin/context-lab-http.py
+Restart=on-failure
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
