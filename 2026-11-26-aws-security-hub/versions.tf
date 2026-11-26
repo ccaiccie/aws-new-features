@@ -1,0 +1,26 @@
+terraform {
+  required_version = ">= 1.6.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.70"
+    }
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.5"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.aws_region
+
+  default_tags {
+    tags = {
+      Project   = var.project_prefix
+      ManagedBy = "Terraform"
+      Lab       = "2026-11-26-aws-security-hub"
+    }
+  }
+}

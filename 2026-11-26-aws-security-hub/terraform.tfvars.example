@@ -1,0 +1,5 @@
+aws_region                    = "us-east-1"
+project_prefix                = "sechub-lab"
+enable_fsbp_standard          = true
+enable_automation_rule        = true
+enable_custom_action_pipeline = true
