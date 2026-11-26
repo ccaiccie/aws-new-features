@@ -30,3 +30,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-25-ssm-multicloud-automation](./2026-11-25-ssm-multicloud-automation) | AWS Systems Manager Automation for Azure and Google Cloud: Multicloud Runbooks | [YouTube](https://youtu.be/UmvMKYL24tE) |
 | [2026-11-25-aws-verified-access](./2026-11-25-aws-verified-access) | AWS Verified Access: VPN-less application access with Cedar policies and trust providers | Upload pending |
 | [2026-11-26-aws-client-vpn-device-posture](./2026-11-26-aws-client-vpn-device-posture) | AWS Client VPN with device posture (Cedar) and the client connect handler | Upload pending |
+| [2026-11-26-aws-waf-shield-cloudfront-alb](./2026-11-26-aws-waf-shield-cloudfront-alb) | AWS WAF and AWS Shield for CloudFront and Application Load Balancer | Upload pending |

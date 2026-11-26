@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars before running terraform plan/apply.
+# terraform.tfvars is excluded by .gitignore.
+
+aws_region             = "us-west-2"
+prefix                 = "waf-lab"
+custom_rule_count_mode = false   # Set true first to test in Count mode, then false to Block
+rate_limit_5min        = 300
+example_blocked_cidrs  = ["203.0.113.0/24"]
