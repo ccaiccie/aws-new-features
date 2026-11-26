@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars before running terraform plan/apply.
+# Never commit real account IDs or secrets.
+
+aws_region                         = "us-east-1"
+project_name                       = "shield-adv-lab"
+health_check_fqdn                  = "example.com"
+health_check_path                  = "/"
+monitored_resource_arn_placeholder = "arn:aws:cloudfront::123456789012:distribution/EXAMPLEDISTID"

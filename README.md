@@ -33,3 +33,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-26-aws-waf-shield-cloudfront-alb](./2026-11-26-aws-waf-shield-cloudfront-alb) | AWS WAF and AWS Shield for CloudFront and Application Load Balancer | Upload pending |
 | [2026-11-26-aws-firewall-manager](./2026-11-26-aws-firewall-manager) | AWS Firewall Manager: org-wide WAF, Shield, security group, and Network Firewall policies | Upload pending |
 | [2026-11-26-aws-vpc-ipv6-dns64-nat64](./2026-11-26-aws-vpc-ipv6-dns64-nat64) | IPv6 in Amazon VPC: dual-stack, egress-only internet gateway, DNS64 and NAT64 | Upload pending |
+| [2026-11-26-aws-shield-advanced](./2026-11-26-aws-shield-advanced) | AWS Shield Advanced deep dive: architecture, SRT, pricing, and a safe Terraform lab | Upload pending |

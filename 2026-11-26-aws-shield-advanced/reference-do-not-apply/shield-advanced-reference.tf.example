@@ -1,0 +1,69 @@
+# ==============================================================================
+# DO NOT APPLY — REFERENCE ONLY!
+# ==============================================================================
+# WARNING: Applying aws_shield_subscription activates a PAID AWS Shield Advanced
+# subscription at $3,000/month with a 1-YEAR COMMITMENT (auto-renewing annually
+# unless disabled) plus Data Transfer Out (DTO) usage fees.
+#
+# This file uses the .tf.example extension inside a separate folder so that
+# running `terraform apply` in `lab/` can NEVER accidentally load or apply it.
+# ==============================================================================
+
+# 1. Account Subscription (PAID: $3,000/month, 1-year commitment)
+resource "aws_shield_subscription" "example" {
+  auto_renew = "DISABLED" # Prevents silent annual auto-renewal; still commits 1 year!
+}
+
+# 2. Explicit Resource Protection
+# Subscribing alone does NOT protect resources; you must add protections explicitly.
+resource "aws_shield_protection" "cloudfront_example" {
+  name         = "prod-cloudfront-protection"
+  resource_arn = "arn:aws:cloudfront::123456789012:distribution/EXAMPLEDISTID"
+
+  depends_on = [aws_shield_subscription.example]
+}
+
+# 3. Protection Group (aggregates multiple protected resources into one unit)
+# Patterns: ALL | ARBITRARY | BY_RESOURCE_TYPE
+# Aggregations: SUM | MEAN | MAX
+resource "aws_shield_protection_group" "web_tier" {
+  protection_group_id = "prod-web-tier-group"
+  aggregation         = "MAX"
+  pattern             = "BY_RESOURCE_TYPE"
+  resource_type       = "CLOUDFRONT_DISTRIBUTION"
+
+  depends_on = [aws_shield_protection.cloudfront_example]
+}
+
+# 4. Health-Based Detection (associate a HEALTHY Route 53 health check)
+# Supported for all protected resource types EXCEPT Route 53 hosted zones.
+resource "aws_shield_protection_health_check_association" "cloudfront_hc" {
+  shield_protection_id = aws_shield_protection.cloudfront_example.id
+  health_check_arn     = "arn:aws:route53:::healthcheck/00000000-0000-0000-0000-000000000000"
+}
+
+# 5. Automatic Application-Layer (L7) DDoS Mitigation (requires AWS WAFv2 web ACL)
+# Adds a Shield Advanced rule group consuming 150 WCUs in the web ACL.
+resource "aws_shield_application_layer_automatic_response" "cloudfront_l7" {
+  resource_arn = "arn:aws:cloudfront::123456789012:distribution/EXAMPLEDISTID"
+  action       = "COUNT" # Start with COUNT, then promote to BLOCK after validation
+}
+
+# 6. Authorize Shield Response Team (SRT) IAM Role
+# Role must trust drt.shield.amazonaws.com and attach AWSShieldDRTAccessPolicy.
+resource "aws_shield_drt_access_role_arn_association" "srt_role" {
+  role_arn = "arn:aws:iam::123456789012:role/AWSShieldDRTAccessRole"
+}
+
+# 7. SRT Proactive Engagement (requires Business or Enterprise Support + Route 53 health checks)
+resource "aws_shield_proactive_engagement" "srt_proactive" {
+  enabled = true
+
+  emergency_contact {
+    email_address = "noc-oncall@example.com"
+    phone_number  = "+15550100100"
+    contact_notes = "Primary 24x7 NOC hotline. Escalate to secondary after 5 minutes."
+  }
+
+  depends_on = [aws_shield_drt_access_role_arn_association.srt_role]
+}
