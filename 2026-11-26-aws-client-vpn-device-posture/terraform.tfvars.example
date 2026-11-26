@@ -1,0 +1,11 @@
+# Copy this file to terraform.tfvars and set your ACM certificate ARNs.
+# terraform.tfvars is excluded by .gitignore — never commit certs, keys, or secrets.
+
+aws_region                  = "us-east-1"
+name_prefix                 = "posture-lab"
+vpc_cidr                    = "10.60.0.0/16"
+subnet_cidr                 = "10.60.1.0/24"
+client_cidr_block           = "10.61.0.0/22"
+server_certificate_arn      = "arn:aws:acm:us-east-1:111122223333:certificate/REPLACE-WITH-SERVER-CERT"
+client_root_certificate_arn = "arn:aws:acm:us-east-1:111122223333:certificate/REPLACE-WITH-CLIENT-CA"
+allowed_platforms           = "mac,win,linux"
