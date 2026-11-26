@@ -1,0 +1,30 @@
+# Copy this file to terraform.tfvars and replace with your own lab values.
+# Never commit terraform.tfvars or real production account IDs to Git.
+
+aws_region         = "us-east-1"
+policy_name_prefix = "nt-fms-lab"
+
+# Target a non-production Organizational Unit (OU) in your AWS Organization
+in_scope_ou_ids = [
+  "ou-exam-11111111"
+]
+
+# Best practice: exclude the Firewall Manager administrator account
+excluded_account_ids = [
+  "111122223333"
+]
+
+# Any resource tagged fms-exempt = "true" stays out of scope
+exclude_tag_key   = "fms-exempt"
+exclude_tag_value = "true"
+
+# Start in audit/flag-only mode first; switch to true only after reviewing compliance findings
+remediation_enabled                    = false
+delete_unused_fm_managed_resources     = true
+delete_all_policy_resources_on_destroy = true
+
+# VPC ID inside your Firewall Manager administrator account for the primary security group
+admin_primary_sg_vpc_id = "vpc-0123456789abcdef0"
+
+create_example_waf_policy       = true
+create_example_common_sg_policy = true
