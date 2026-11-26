@@ -1,0 +1,16 @@
+# Copy to terraform.tfvars and populate with your own values.
+# Never commit terraform.tfvars or state files.
+
+aws_region             = "us-west-2"
+prefix                 = "ava-lab"
+policy_reference_name  = "idc"
+application_domain     = "app.example.com"
+domain_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/00000000-0000-0000-0000-000000000000"
+endpoint_domain_prefix = "my-ava-app"
+internal_alb_arn       = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-internal-alb/0000000000000000"
+alb_protocol           = "https"
+alb_port               = 443
+subnet_ids             = ["subnet-00000000000000001", "subnet-00000000000000002"]
+security_group_ids     = ["sg-00000000000000001"]
+allowed_idc_group_id   = "c242c5b0-6081-1845-6fa8-6e0d9513c107"
+enable_allow_policy    = false
