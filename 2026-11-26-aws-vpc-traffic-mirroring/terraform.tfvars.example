@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars and set your operator IPv4 CIDR before running terraform apply.
+aws_region    = "us-east-1"
+project_name  = "tm-lab"
+instance_type = "t3.micro"
+admin_cidr    = "203.0.113.10/32"
+key_name      = null
+vni           = 100
+packet_length = null
