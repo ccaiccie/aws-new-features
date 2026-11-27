@@ -1,0 +1,11 @@
+# Copy to terraform.tfvars and adjust as needed.
+# WARNING: Cloud WAN core networks and attachments bill hourly until deleted.
+
+aws_region                = "us-east-1"
+project_name              = "cwan-unit4-lab"
+asn_range                 = "65000-65100"
+allow_prod_shared_sharing = false
+
+# Optional second-account RAM sharing (must be deployed in us-east-1)
+enable_ram_share     = false
+ram_share_account_id = ""

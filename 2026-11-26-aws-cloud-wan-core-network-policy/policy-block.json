@@ -1,0 +1,46 @@
+{
+  "version": "2021.12",
+  "core-network-configuration": {
+    "vpn-ecmp-support": true,
+    "dns-support": true,
+    "asn-ranges": [
+      "65000-65100"
+    ],
+    "edge-locations": [
+      {
+        "location": "us-east-1"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "name": "prod",
+      "description": "Production workloads segment",
+      "require-attachment-acceptance": false,
+      "isolate-attachments": false
+    },
+    {
+      "name": "shared",
+      "description": "Shared services segment",
+      "require-attachment-acceptance": false,
+      "isolate-attachments": false
+    }
+  ],
+  "attachment-policies": [
+    {
+      "rule-number": 100,
+      "description": "Map attachments to segments using the Segment attachment tag",
+      "condition-logic": "or",
+      "conditions": [
+        {
+          "type": "tag-exists",
+          "key": "Segment"
+        }
+      ],
+      "action": {
+        "association-method": "tag",
+        "tag-value-of-key": "Segment"
+      }
+    }
+  ]
+}

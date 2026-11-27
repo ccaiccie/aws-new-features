@@ -37,3 +37,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-26-aws-security-hub](./2026-11-26-aws-security-hub) | AWS Security Hub and Security Hub CSPM deep dive: standards, ASFF vs OCSF, and Terraform lab | Upload pending |
 | [2026-11-26-aws-vpc-traffic-mirroring](./2026-11-26-aws-vpc-traffic-mirroring) | Amazon VPC Traffic Mirroring: sessions, filters, and targets | Upload pending |
 | [2026-11-26-aws-vpc-reachability-network-access-analyzer](./2026-11-26-aws-vpc-reachability-network-access-analyzer) | Amazon VPC Reachability Analyzer and Network Access Analyzer | Upload pending |
+| [2026-11-26-aws-cloud-wan-core-network-policy](./2026-11-26-aws-cloud-wan-core-network-policy) | AWS Cloud WAN core network policy, segments, and attachment types | Upload pending |
