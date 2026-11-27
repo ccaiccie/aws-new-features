@@ -39,3 +39,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-26-aws-vpc-reachability-network-access-analyzer](./2026-11-26-aws-vpc-reachability-network-access-analyzer) | Amazon VPC Reachability Analyzer and Network Access Analyzer | Upload pending |
 | [2026-11-26-aws-cloud-wan-core-network-policy](./2026-11-26-aws-cloud-wan-core-network-policy) | AWS Cloud WAN core network policy, segments, and attachment types | Upload pending |
 | [2026-11-26-aws-s2s-vpn-transit-gateway](./2026-11-26-aws-s2s-vpn-transit-gateway) | AWS Site-to-Site VPN with Transit Gateway: HA, acceleration, and routing | Upload pending |
+| [2026-11-26-aws-security-groups-nacls-prefix-lists](./2026-11-26-aws-security-groups-nacls-prefix-lists) | Amazon VPC security groups, Network ACLs, and managed prefix lists | Upload pending |

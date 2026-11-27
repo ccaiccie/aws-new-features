@@ -1,0 +1,28 @@
+# Copy this file to terraform.tfvars and replace the example CIDR with your own public /32 IP.
+# Never commit terraform.tfvars or state files to source control.
+
+aws_region = "us-east-1"
+
+trusted_admin_cidrs = [
+  {
+    cidr        = "203.0.113.10/32"
+    description = "Mike workstation public IP (replace with your IP/32)"
+  },
+  {
+    cidr        = "198.51.100.0/24"
+    description = "Branch office NAT egress range (example)"
+  }
+]
+
+prefix_list_max_entries = 5
+instance_type           = "t3.micro"
+key_name                = ""
+
+# Optional: set to your public IP/32 to test explicit NACL DENY at rule 90
+block_test_cidr = ""
+
+# Set to false to prove stateless NACL return-traffic failure without ephemeral ports
+enable_ephemeral_outbound_nacl = true
+
+# Set to true to capture ACCEPT / REJECT records in CloudWatch Logs
+enable_flow_logs = true
