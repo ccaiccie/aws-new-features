@@ -1,0 +1,20 @@
+# Copy to terraform.tfvars and adjust for your lab account.
+# COST WARNING: Transit Gateway attachments, Direct Connect gateway attachments,
+# AWS Interconnect, and Azure resources bill until deleted.
+
+aws_region      = "us-east-1"
+name_prefix     = "aws-ic-azure-lab"
+aws_vpc_cidr    = "10.10.0.0/16"
+aws_subnet_cidr = "10.10.1.0/24"
+azure_vnet_cidr = "10.20.0.0/16"
+
+tgw_amazon_side_asn  = 64512
+dxgw_amazon_side_asn = 64513
+
+# SAFE DEFAULT: keep false until you explicitly opt in to creating a billed Interconnect.
+enable_interconnect_cli_instructions = false
+
+# After creating or accepting the Interconnect via AWS CLI/Console, paste its ID
+# (e.g., "mcc-1234abcd") and re-apply to create the CloudWatch utilization alarm.
+interconnect_connection_id          = ""
+utilization_alarm_threshold_percent = 80

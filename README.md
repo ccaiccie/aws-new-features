@@ -40,3 +40,4 @@ Each video has its own folder. Copy `terraform.tfvars.example` to `terraform.tfv
 | [2026-11-26-aws-cloud-wan-core-network-policy](./2026-11-26-aws-cloud-wan-core-network-policy) | AWS Cloud WAN core network policy, segments, and attachment types | Upload pending |
 | [2026-11-26-aws-s2s-vpn-transit-gateway](./2026-11-26-aws-s2s-vpn-transit-gateway) | AWS Site-to-Site VPN with Transit Gateway: HA, acceleration, and routing | Upload pending |
 | [2026-11-26-aws-security-groups-nacls-prefix-lists](./2026-11-26-aws-security-groups-nacls-prefix-lists) | Amazon VPC security groups, Network ACLs, and managed prefix lists | Upload pending |
+| [2026-11-27-aws-interconnect-multicloud-azure](./2026-11-27-aws-interconnect-multicloud-azure) | AWS Interconnect - multicloud with Microsoft Azure (GA): managed private connectivity, ECMP, MACsec and a Terraform plus AWS CLI lab | Upload pending |
